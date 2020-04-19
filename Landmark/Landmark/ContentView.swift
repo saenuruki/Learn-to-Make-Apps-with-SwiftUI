@@ -11,7 +11,30 @@ import SwiftUI
 // View protocol and describes the view’s content and layout
 struct ContentView: View {
     var body: some View {
-        Text("Hello, SwiftUI!")
+        VStack {
+            MapView()
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: 300)
+            
+            CircleImage()
+                .offset(y: -75)
+                .padding(.bottom, -75)
+            VStack(alignment: .leading) {
+                Text("Turtle Rock")
+                    .font(.title)
+                    .multilineTextAlignment(.center)
+                HStack {
+                    Text("Joshua Tree National Park")
+                        .font(.subheadline)
+                    Spacer()
+                    Text("California")
+                        .font(.subheadline)
+                }
+            }
+            .padding()
+            
+            Spacer()
+        }
     }
 }
 
